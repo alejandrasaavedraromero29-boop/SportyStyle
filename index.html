@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SportyStyle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <h1>SportyStyle 🏋️</h1>
+
+    <div class="auth-buttons">
+        <button id="btnLogin" onclick="login()">Iniciar sesión</button>
+        <button onclick="logout()">Cerrar sesión</button>
+    </div>
+
+    <h2 id="bienvenida"></h2>
+</header>
+
+<!-- PRODUCTOS -->
+<section>
+    <h2>Productos</h2>
+
+    <div class="contenedor-productos">
+
+        <div class="producto">
+            <img src="img/camiseta.jpeg">
+            <h3>Camiseta deportiva</h3>
+            <p>Ideal para entrenar</p>
+            <p>$10000</p>
+            <button onclick="agregarCarrito('Camiseta deportiva', 10000)">Agregar</button>
+        </div>
+
+        <div class="producto">
+            <img src="img/pantalon.jpeg">
+            <h3>Pantalón deportivo</h3>
+            <p>Comodidad total</p>
+            <p>$20000</p>
+            <button onclick="agregarCarrito('Pantalón deportivo', 20000)">Agregar</button>
+        </div>
+
+        <div class="producto">
+            <img src="img/accesorio.jpeg">
+            <h3>Accesorio deportivo</h3>
+            <p>Complemento ideal</p>
+            <p>$5000</p>
+            <button onclick="agregarCarrito('Accesorio deportivo', 5000)">Agregar</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- CARRITO -->
+<section>
+    <h2>Resumen de compra</h2>
+
+    <div id="carrito-contenedor">
+        <table id="tabla-carrito">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="carrito"></tbody>
+        </table>
+
+        <p id="total"></p>
+    </div>
+</section>
+
+<!-- FORMULARIO -->
+<section>
+    <h2>Pago y envío</h2>
+
+    <form onsubmit="finalizarCompra(event)">
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+        <input type="text" id="direccion" placeholder="Dirección" required>
+        <input type="email" id="correo" placeholder="Correo electrónico" required>
+        <input type="text" id="telefono" placeholder="Teléfono" required>
+        <button type="submit">Finalizar compra</button>
+    </form>
+</section>
+
+<!-- SCRIPTS -->
+<script src="js/app.js"></script>
+
+</body>
+</html>
